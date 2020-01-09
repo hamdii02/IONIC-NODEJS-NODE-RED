@@ -1,0 +1,50 @@
+<!-- -->
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title> <p>Smart Car</p> </ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label *ngIf="isToggled">Alert Activated</ion-label>
+      <ion-label *ngIf="!isToggled">Alert Desactivated</ion-label>
+      <ion-toggle
+        [(ngModel)]="isToggled"
+        (ionChange)="notify()"
+        disabled="{{ alarm }}"
+      ></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <div cards>
+    <div class="grid-full">
+      <ion-row>
+        <ion-col>
+          <img
+            class="image"
+            (click)="goToStreamFeed()"
+            src="assets/img/cameras.png"
+          />
+
+          <div class="image">check location</div>
+        </ion-col>
+
+        <ion-col>
+          <img
+            class="image"
+            (click)="goTostats()"
+            src="assets/img/fire.png"
+          />
+          <div class="image">sleeping stats</div>
+        </ion-col>
+
+       
+
+      
+      </ion-row>
+    </div>
+  </div>
+</ion-content>
